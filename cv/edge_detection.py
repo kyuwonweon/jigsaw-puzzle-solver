@@ -41,13 +41,50 @@ M = np.sqrt(Ix**2 + Iy**2)
 T = np.arctan(Iy,Ix)
 
 # Non-maxima Suppression
+def non_maxima_suppression(M, T):
+    rows, cols = M.shape
+    NMS = np.zeros_like(M)
+    angle = np.degrees(T) % 180
+
+    for i in range(1, rows-1):
+        for j in range(1, cols-1):
+            a = angle[i, j]
+
+            # Left and right
+            if (0 <= a < 22.5) or (157.5 <= a < 180):
+                p, q = M[i, j+1], M[i, j-1]
+            # Diagonal
+            elif 22.5 <= a < 67.5:
+                p, q = M[i+1, j-1], M[i-1, j+1]
+            # Up and down
+            elif 67.5 <= a < 112.5:
+                p, q = M[i+1, j], M[i-1, j]
+            # The other diagonal
+            else:
+                p, q = M[i-1, j-1], M[i+1, j+1]
+
+            if M[i, j] >= p and M[i, j] >= q:
+                NMS[i, j] = M[i, j]
+
+    return NMS
+
+
+NMS = non_maxima_suppression(M, T)
 
 # Double Thresholding
+M_norm = NMS / NMS.max()
+T_high = .15
+T_low = T_high*.5
+strong = M_norm >= T_high
+weak = (M_norm >= T_low) & (M_norm < T_high) 
+result = np.zeros_like(M_norm)
+result[strong] = 1.0
+result[weak] = 0.5
 
 # Edge linking 
 
 # Result Visualization 
-plt.imshow(M, cmap='gray')
+plt.imshow(result, cmap='gray')
 plt.title('Gradient Magnitude')
 plt.axis('off')
 plt.show()
