@@ -29,6 +29,16 @@ k = gaussian_kernel(size = 5, sigma = 2)
 S = conv2d(I, k)
 
 # Image Gradient
+Gx = np.array([[-1, 0, 1],
+               [-2, 0, 2],
+               [-1, 0, 1]], dtype=float)
+Gy = np.array([[1, 2, 1],
+               [0, 0, 0],
+               [-1, -2, -1]], dtype=float)
+Ix = conv2d(S, Gx)
+Iy = conv2d(S, Gy)
+M = np.sqrt(Ix**2 + Iy**2)
+T = np.arctan(Iy,Ix)
 
 # Non-maxima Suppression
 
@@ -37,7 +47,7 @@ S = conv2d(I, k)
 # Edge linking 
 
 # Result Visualization 
-plt.imshow(S, cmap='gray')
-plt.title('Loaded Grayscale Image')
+plt.imshow(M, cmap='gray')
+plt.title('Gradient Magnitude')
 plt.axis('off')
 plt.show()
