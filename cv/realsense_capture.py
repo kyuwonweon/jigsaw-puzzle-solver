@@ -37,13 +37,7 @@ def get_frame():
 
 def pixel_to_3d(px, py, depth):
     z = depth[py, px] / 1000.0  # mm to meters
-
-    point = rs.rs2_deproject_pixel_to_point(
-        intrinsics,
-        [px, py],
-        z
-    )
-
+    point = rs.rs2_deproject_pixel_to_point(intrinsics,[px, py],z)
     return np.array(point, dtype=np.float32)
 
 
