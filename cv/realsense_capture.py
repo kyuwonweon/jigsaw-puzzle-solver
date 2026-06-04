@@ -1,5 +1,8 @@
+"""Module for capturing and processing RealSense camera frames."""
 import cv2
+
 import numpy as np
+
 import pyrealsense2 as rs
 
 pipeline = rs.pipeline()
@@ -23,6 +26,7 @@ for _ in range(30):
 
 
 def get_frame():
+    """Get the latest color and depth frames from the RealSense camera."""
     frames = pipeline.wait_for_frames()
     aligned_frames = align.process(frames)
 
@@ -36,13 +40,14 @@ def get_frame():
 
 
 def pixel_to_3d(px, py, depth):
-    z = depth[py, px] / 1000.0  # mm to meters
-    point = rs.rs2_deproject_pixel_to_point(intrinsics,[px, py],z)
+    """Convert a pixel location to 3D coordinates."""
+    z = depth[py, px] / 1000.0
+    point = rs.rs2_deproject_pixel_to_point(intrinsics, [px, py], z)
     return np.array(point, dtype=np.float32)
 
 
 try:
-    print("Streaming")
+    print('Streaming — press q to quit')
 
     while True:
         color, depth = get_frame()
@@ -52,10 +57,10 @@ try:
             cv2.COLORMAP_JET,
         )
 
-        cv2.imshow("color", color)
-        cv2.imshow("depth", depth_vis)
+        cv2.imshow('color', color)
+        cv2.imshow('depth', depth_vis)
 
-        if cv2.waitKey(1) & 0xFF == ord("q"):
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
 finally:
