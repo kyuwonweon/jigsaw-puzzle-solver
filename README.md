@@ -6,11 +6,7 @@ An autonomous robotic system that detects, identifies, and places jigsaw puzzle 
 
 ## Demo
 
-<p align="center">
-  <video src="./media/demo.mp4" width="100%" controls autoplay muted loop>
-    Your browser does not support the video tag.
-  </video>
-</p>
+https://private-user-images.githubusercontent.com/189086001/602967095-7259b380-a584-4c5c-94c5-fce33e3927de.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODA1OTA3ODMsIm5iZiI6MTc4MDU5MDQ4MywicGF0aCI6Ii8xODkwODYwMDEvNjAyOTY3MDk1LTcyNTliMzgwLWE1ODQtNGM1Yy05NGM1LWZjZTMzZTM5MjdkZS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjA0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYwNFQxNjI4MDNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hYTJiZmE2ZWJkNzljYmRhOWE2ZWUwMzhlNjg2YWZhMDZmODc2ZTFlZTFjMWZkZDE5ZDEyYTBlMDhkODE4OTUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9dmlkZW8lMkZtcDQifQ.iZc1ATxgRcgY6q_RMHBXsQYKcgwu9NOCLS7TjhuxofY
 
 ---
 
