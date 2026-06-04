@@ -6,11 +6,11 @@ An autonomous robotic system that detects, identifies, and places jigsaw puzzle 
 
 ## Demo
 
-<!-- Add demo video here -->
-> **Video:** *(coming soon)*
-
-<!-- Add result image here -->
-> **Result image:** *(coming soon)*
+<p align="center">
+  <video src="./media/demo.mp4" width="100%" controls autoplay muted loop>
+    Your browser does not support the video tag.
+  </video>
+</p>
 
 ---
 
